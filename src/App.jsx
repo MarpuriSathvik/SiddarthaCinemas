@@ -13,6 +13,7 @@ function App() {
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [bookingStep, setBookingStep] = useState('details'); // details, seats, confirmation
   const [bookingData, setBookingData] = useState(null);
+  const [showAllUpcoming, setShowAllUpcoming] = useState(false);
 
   const nowShowing = [
     {
@@ -191,12 +192,23 @@ function App() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {upcomingMovies.map((movie, index) => (
+          {(showAllUpcoming ? upcomingMovies : upcomingMovies.slice(0, 4)).map((movie, index) => (
             <div key={index} className="cursor-pointer">
               <MovieCard {...movie} buttonText="View" />
             </div>
           ))}
         </div>
+
+        {upcomingMovies.length > 4 && (
+          <div className="mt-8 text-center">
+            <Button
+              variant="ghost"
+              onClick={() => setShowAllUpcoming(!showAllUpcoming)}
+            >
+              {showAllUpcoming ? "View Less" : "View More"}
+            </Button>
+          </div>
+        )}
       </section >
 
       {/* Amenities Mockup */}
