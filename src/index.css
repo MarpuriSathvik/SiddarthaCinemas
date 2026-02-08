@@ -6,7 +6,28 @@
   body {
     @apply bg-background text-white font-sans antialiased;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background-image: url('./assets/Screen2_Main.PNG');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+  }
+
+  #root {
+    background-color: rgba(0, 0, 0, 0.85);
+    /* Overlay for readability */
+    min-height: 100vh;
   }
 }
