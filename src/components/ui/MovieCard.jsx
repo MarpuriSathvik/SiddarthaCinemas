@@ -2,7 +2,7 @@ import React from 'react';
 import { Star, Clock, Calendar } from 'lucide-react';
 import Button from './Button';
 
-const MovieCard = ({ title, genre, rating, duration, image, releaseDate, bookUrl, buttonText, isPrimary }) => {
+const MovieCard = ({ title, genre, rating, duration, image, releaseDate, bookUrl, buttonText, isPrimary, showTimes }) => {
     return (
         <div className="group relative bg-surface rounded-xl overflow-hidden shadow-lg border border-white/5 transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
             {/* Image Overlay */}
@@ -28,24 +28,39 @@ const MovieCard = ({ title, genre, rating, duration, image, releaseDate, bookUrl
                 <h3 className="text-xl font-heading font-bold text-white mb-1 truncate">{title}</h3>
                 <p className="text-gray-400 text-sm mb-3">{genre}</p>
 
-                <div className="flex items-center gap-4 text-xs text-gray-500 mb-4">
-                    {duration && (
-                        <div className="flex items-center gap-1">
-                            <Clock className="w-3 h-3" />
-                            <span>{duration}</span>
-                        </div>
-                    )}
-                    {releaseDate && (
-                        <div className="flex items-center gap-1">
-                            <Calendar className="w-3 h-3" />
-                            <span>{releaseDate}</span>
-                        </div>
-                    )}
+                <div className="flex flex-col gap-2 text-xs text-gray-500 mb-4">
+                    <div className="flex items-center gap-4">
+                        {duration && (
+                            <div className="flex items-center gap-1">
+                                <Clock className="w-3 h-3" />
+                                <span>{duration}</span>
+                            </div>
+                        )}
+                        {releaseDate && (
+                            <div className="flex items-center gap-1">
+                                <Calendar className="w-3 h-3" />
+                                <span>{releaseDate}</span>
+                            </div>
+                        )}
+                    </div>
                 </div>
+
+                {showTimes && (
+                    <div className="mb-4">
+                        <p className="text-xs font-semibold text-primary mb-2 uppercase tracking-wide">Showtimes</p>
+                        <div className="flex flex-wrap gap-2">
+                            {showTimes.map((time, index) => (
+                                <span key={index} className="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-gray-300 hover:bg-primary/20 hover:border-primary/30 hover:text-primary transition-colors cursor-default">
+                                    {time}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                )}
 
                 <Button
                     variant={isPrimary ? "primary" : "outline"}
-                    className="w-full text-sm py-2"
+                    className="w-full text-base font-bold py-3 md:py-2 md:text-sm"
                     onClick={(e) => {
                         e.stopPropagation();
                         if (bookUrl) {
