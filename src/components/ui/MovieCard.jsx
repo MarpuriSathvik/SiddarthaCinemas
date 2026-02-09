@@ -1,8 +1,30 @@
 import React from 'react';
-import { Star, Clock, Calendar } from 'lucide-react';
+import { Star, Clock, Calendar, Share2 } from 'lucide-react';
 import Button from './Button';
 
 const MovieCard = ({ title, genre, rating, duration, image, releaseDate, bookUrl, buttonText, isPrimary, showTimes }) => {
+
+    const handleShare = async (e) => {
+        e.stopPropagation();
+        const shareData = {
+            title: `Watch ${title} at Siddartha Cinemas`,
+            text: `Check out ${title} (${genre}) at Siddartha Cinemas, Madanapalle!`,
+            url: window.location.href, // Or construct a specific URL if routing is set up
+        };
+
+        try {
+            if (navigator.share) {
+                await navigator.share(shareData);
+            } else {
+                // Fallback: Copy to clipboard
+                await navigator.clipboard.writeText(`${shareData.title}\n${shareData.text}\n${shareData.url}`);
+                alert('Link copied to clipboard!');
+            }
+        } catch (err) {
+            console.error('Error sharing:', err);
+        }
+    };
+
     return (
         <div className="group relative bg-surface rounded-xl overflow-hidden shadow-lg border border-white/5 transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
             {/* Image Overlay */}
@@ -14,13 +36,27 @@ const MovieCard = ({ title, genre, rating, duration, image, releaseDate, bookUrl
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
 
-                {/* Rating Badge */}
-                {rating && (
-                    <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm px-2 py-1 rounded-md flex items-center gap-1 border border-white/10">
-                        <Star className="w-3 h-3 text-primary fill-primary" />
-                        <span className="text-xs font-bold text-white">{rating}</span>
-                    </div>
-                )}
+                {/* Top Actions: Rating & Share */}
+                <div className="absolute top-3 left-0 right-0 px-3 flex justify-between items-start">
+                    {/* Rating Badge */}
+                    {rating ? (
+                        <div className="bg-black/60 backdrop-blur-sm px-2 py-1 rounded-md flex items-center gap-1 border border-white/10">
+                            <Star className="w-3 h-3 text-primary fill-primary" />
+                            <span className="text-xs font-bold text-white">{rating}</span>
+                        </div>
+                    ) : (
+                        <div></div> // Spacer if no rating
+                    )}
+
+                    {/* Share Button */}
+                    <button
+                        onClick={handleShare}
+                        className="bg-black/40 backdrop-blur-sm p-1.5 rounded-full border border-white/10 hover:bg-primary hover:text-black hover:border-primary transition-colors text-white"
+                        aria-label="Share Movie"
+                    >
+                        <Share2 className="w-4 h-4" />
+                    </button>
+                </div>
             </div>
 
             {/* Content */}

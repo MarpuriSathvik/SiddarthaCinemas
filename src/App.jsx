@@ -11,6 +11,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
 import heroBg from './assets/Screen2_Main.PNG';
 import Location from './components/features/Location';
+import MovieCardSkeleton from './components/ui/MovieCardSkeleton';
 
 function App() {
   const [selectedMovie, setSelectedMovie] = useState(null);
@@ -18,6 +19,15 @@ function App() {
   const [bookingData, setBookingData] = useState(null);
   const [isComingSoonVisible, setIsComingSoonVisible] = useState(false);
   const [viewAllUpcoming, setViewAllUpcoming] = useState(false);
+
+  // Loading State
+  const [isLoading, setIsLoading] = useState(true);
+
+  React.useEffect(() => {
+    // Simulate loading delay
+    const timer = setTimeout(() => setIsLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
   React.useEffect(() => {
     const handleHashChange = () => {
@@ -211,17 +221,25 @@ function App() {
           <Button variant="ghost" className="hidden md:block">View All</Button>
         </div>
 
+
         {/* Mobile: Swipeable Carousel, Desktop: Grid */}
         <div
           ref={scrollRef}
           className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 md:grid md:grid-cols-5 md:gap-8 md:overflow-visible no-scrollbar"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {nowShowing.map((movie, index) => (
-            <div key={index} onClick={() => handleMovieClick(movie)} className="min-w-[85%] snap-center cursor-pointer md:min-w-0 md:w-auto">
-              <MovieCard {...movie} isPrimary={true} buttonText="Book Now" />
-            </div>
-          ))}
+          {isLoading
+            ? Array(5).fill(0).map((_, i) => (
+              <div key={i} className="min-w-[85%] snap-center md:min-w-0 md:w-auto">
+                <MovieCardSkeleton />
+              </div>
+            ))
+            : nowShowing.map((movie, index) => (
+              <div key={index} onClick={() => handleMovieClick(movie)} className="min-w-[85%] snap-center cursor-pointer md:min-w-0 md:w-auto">
+                <MovieCard {...movie} isPrimary={true} buttonText="Book Now" />
+              </div>
+            ))
+          }
         </div>
         <div className="mt-8 text-center md:hidden">
           <Button variant="ghost">View All</Button>
@@ -239,11 +257,18 @@ function App() {
 
         {/* Mobile: 2x2 grid showing 4 movies, Desktop: Show all in a row */}
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-8">
-          {(viewAllUpcoming ? upcomingMovies : upcomingMovies.slice(0, 5)).map((movie, index) => (
-            <div key={index} className={`cursor-pointer ${!viewAllUpcoming && index === 4 ? 'hidden lg:block' : ''}`}>
-              <MovieCard {...movie} isPrimary={true} buttonText="View" />
-            </div>
-          ))}
+          {isLoading
+            ? Array(5).fill(0).map((_, i) => (
+              <div key={i}>
+                <MovieCardSkeleton />
+              </div>
+            ))
+            : (viewAllUpcoming ? upcomingMovies : upcomingMovies.slice(0, 5)).map((movie, index) => (
+              <div key={index} className={`cursor-pointer ${!viewAllUpcoming && index === 4 ? 'hidden lg:block' : ''}`}>
+                <MovieCard {...movie} isPrimary={true} buttonText="View" />
+              </div>
+            ))
+          }
         </div>
 
         {/* View More/Less Button - Shows when there are more than 4 movies on mobile, or 5 on desktop */}
