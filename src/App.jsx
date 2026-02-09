@@ -219,7 +219,7 @@ function App() {
 
           {/* Brand Partners */}
           <div className="mt-8 animate-fade-in-up delay-400 w-full max-w-screen-xl mx-auto px-4">
-            <div className="flex flex-nowrap justify-between items-center gap-1 md:gap-2 rounded-2xl p-[5px] shadow-2xl overflow-x-auto no-scrollbar" style={{ backgroundColor: '#F7F7F0' }}>
+            <div className="flex flex-nowrap justify-between items-center gap-1 md:gap-2 bg-white rounded-2xl p-[5px] shadow-2xl overflow-x-auto no-scrollbar">
               <img src={Qube} alt="Qube Cinema" className="h-6 md:h-10 w-auto object-contain shrink-0" />
               <img src={Dolby} alt="Dolby Atmos" className="h-8 md:h-12 w-auto object-contain shrink-0" />
               <img src={Barco} alt="Barco" className="h-6 md:h-10 w-auto object-contain shrink-0" />
