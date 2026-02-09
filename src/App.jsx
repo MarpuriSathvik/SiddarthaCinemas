@@ -212,64 +212,24 @@ function App() {
           <p className="text-gray-300 text-lg md:text-xl mb-12 max-w-2xl mx-auto animate-fade-in-up delay-200 font-light leading-relaxed">
             Experience crystal-clear 4K visuals, powerful Dolby sound, and luxurious push-back seating at Siddartha Cinemas, Madanapalle.
           </p>
-          {/* CTA Buttons */}
-          <div className="flex flex-row md:flex-col gap-4 justify-center animate-fade-in-up delay-300">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex-1 md:flex-none bg-gradient-to-r from-yellow-400 to-yellow-600 text-black px-6 md:px-12 py-4 rounded-full font-bold text-base md:text-lg hover:from-yellow-500 hover:to-yellow-700 transition-all duration-300 shadow-2xl hover:shadow-yellow-500/50"
-              onClick={() => window.open('https://in.bookmyshow.com/buytickets/siddartha-cinemas-madanapalle/cinema-madd-SIDC-MT/20250103', '_blank')}
-            >
-              Book Now
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex-1 md:flex-none border-2 border-white text-white px-6 md:px-12 py-4 rounded-full font-bold text-base md:text-lg hover:bg-white/10 transition-all duration-300"
-              onClick={() => document.getElementById('showtimes')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Showtimes
-            </motion.button>
+          <div className="flex flex-col md:flex-row gap-6 justify-center animate-fade-in-up delay-300">
+            <Button variant="primary" className="px-10 py-4 text-lg font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300" onClick={handleBookNow}>Book Tickets Now</Button>
+            <Button variant="outline" className="px-10 py-4 text-lg border-white/20 hover:bg-white/10 backdrop-blur-sm transition-all duration-300" onClick={() => document.getElementById('movies').scrollIntoView({ behavior: 'smooth' })}>View Showtimes</Button>
           </div>
 
           {/* Brand Partners */}
           <div className="mt-8 animate-fade-in-up delay-400 w-full max-w-screen-xl mx-auto px-4">
-            {/* Mobile: Auto-scrolling carousel */}
-            <div className="md:hidden overflow-hidden">
-              <div className="flex items-center gap-4 bg-white rounded-2xl p-[5px] shadow-2xl animate-scroll-logos">
-                {/* First set of logos */}
-                <img src={Qube} alt="Qube Cinema" className="h-6 w-auto object-contain shrink-0" />
-                <img src={Dolby} alt="Dolby Atmos" className="h-8 w-auto object-contain shrink-0" />
-                <img src={Barco} alt="Barco" className="h-6 w-auto object-contain shrink-0" />
-                <img src={Christie} alt="Christie" className="h-5 w-auto object-contain shrink-0" />
-                <img src={BMS} alt="BookMyShow" className="h-6 w-auto object-contain shrink-0" />
-                <img src={Galalite} alt="Galalite Screens" className="h-8 w-auto object-contain shrink-0" />
-                <img src={Laser4K} alt="4K Laser" className="h-6 w-auto object-contain shrink-0" />
-                <img src={ThreeD} alt="3D" className="h-8 w-auto object-contain shrink-0" />
-                {/* Duplicated set for seamless loop */}
-                <img src={Qube} alt="Qube Cinema" className="h-6 w-auto object-contain shrink-0" />
-                <img src={Dolby} alt="Dolby Atmos" className="h-8 w-auto object-contain shrink-0" />
-                <img src={Barco} alt="Barco" className="h-6 w-auto object-contain shrink-0" />
-                <img src={Christie} alt="Christie" className="h-5 w-auto object-contain shrink-0" />
-                <img src={BMS} alt="BookMyShow" className="h-6 w-auto object-contain shrink-0" />
-                <img src={Galalite} alt="Galalite Screens" className="h-8 w-auto object-contain shrink-0" />
-                <img src={Laser4K} alt="4K Laser" className="h-6 w-auto object-contain shrink-0" />
-                <img src={ThreeD} alt="3D" className="h-8 w-auto object-contain shrink-0" />
-              </div>
+            <div className="flex flex-nowrap justify-between items-center gap-1 md:gap-2 bg-white rounded-2xl p-[5px] shadow-2xl overflow-x-auto no-scrollbar">
+              <img src={Qube} alt="Qube Cinema" className="h-6 md:h-10 w-auto object-contain shrink-0" />
+              <img src={Dolby} alt="Dolby Atmos" className="h-8 md:h-12 w-auto object-contain shrink-0" />
+              <img src={Barco} alt="Barco" className="h-6 md:h-10 w-auto object-contain shrink-0" />
+              <img src={Christie} alt="Christie" className="h-5 md:h-8 w-auto object-contain shrink-0" />
+              <img src={BMS} alt="BookMyShow" className="h-6 md:h-10 w-auto object-contain shrink-0" />
+              <img src={Galalite} alt="Galalite Screens" className="h-8 md:h-12 w-auto object-contain shrink-0" />
+              <img src={Laser4K} alt="4K Laser" className="h-6 md:h-10 w-auto object-contain shrink-0" />
+              <img src={ThreeD} alt="3D" className="h-8 md:h-12 w-auto object-contain shrink-0" />
             </div>
-
-            {/* Desktop: Static layout */}
-            <div className="hidden md:flex flex-nowrap justify-between items-center gap-2 bg-white rounded-2xl p-[5px] shadow-2xl overflow-x-auto no-scrollbar">
-              <img src={Qube} alt="Qube Cinema" className="h-10 w-auto object-contain shrink-0" />
-              <img src={Dolby} alt="Dolby Atmos" className="h-12 w-auto object-contain shrink-0" />
-              <img src={Barco} alt="Barco" className="h-10 w-auto object-contain shrink-0" />
-              <img src={Christie} alt="Christie" className="h-8 w-auto object-contain shrink-0" />
-              <img src={BMS} alt="BookMyShow" className="h-10 w-auto object-contain shrink-0" />
-              <img src={Galalite} alt="Galalite Screens" className="h-12 w-auto object-contain shrink-0" />
-              <img src={Laser4K} alt="4K Laser" className="h-10 w-auto object-contain shrink-0" />
-              <img src={ThreeD} alt="3D" className="h-12 w-auto object-contain shrink-0" />
-            </div>
-            <p className="text-white/40 text-xs mt-4 uppercase tracking-widest font-medium text-center">Powered by World-Class Technology</p>
+            <p className="text-white/40 text-xs mt-4 uppercase tracking-widest font-medium">Powered by World-Class Technology</p>
           </div>
         </div >
       </section >
