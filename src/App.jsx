@@ -202,7 +202,7 @@ function App() {
             <span className="font-sans font-light tracking-wide text-white/90">Experience</span>
           </h1>
           <p className="text-gray-300 text-lg md:text-xl mb-12 max-w-2xl mx-auto animate-fade-in-up delay-200 font-light leading-relaxed">
-            Immerse yourself in crystal clear 4K visuals and earth-shattering Dolby sound at Siddartha Cinemas.
+            Experience crystal-clear 4K visuals, powerful Dolby sound, and luxurious push-back seating at Siddartha Cinemas, Madanapalle.
           </p>
           <div className="flex flex-col md:flex-row gap-6 justify-center animate-fade-in-up delay-300">
             <Button variant="primary" className="px-10 py-4 text-lg font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300" onClick={handleBookNow}>Book Tickets Now</Button>
