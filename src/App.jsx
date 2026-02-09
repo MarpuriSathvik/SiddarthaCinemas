@@ -8,10 +8,17 @@ import MovieDetails from './components/features/MovieDetails';
 import SeatSelection from './components/features/SeatSelection';
 import InstallPWA from './components/features/InstallPWA';
 import { AnimatePresence, motion } from 'framer-motion';
-import { CheckCircle } from 'lucide-react';
+import checkCircle from 'lucide-react';
 import heroBg from './assets/Screen2_Main.PNG';
 import Location from './components/features/Location';
 import MovieCardSkeleton from './components/ui/MovieCardSkeleton';
+import Qube from './assets/Qube.png';
+import Laser4K from './assets/4KLaser.png';
+import Christie from './assets/Christe.jpg';
+import Barco from './assets/Barco.png';
+import Dolby from './assets/Dolby.png';
+import ThreeD from './assets/3D.png';
+import BMS from './assets/BookMyShow.svg';
 
 function App() {
   const [selectedMovie, setSelectedMovie] = useState(null);
@@ -207,6 +214,22 @@ function App() {
           <div className="flex flex-col md:flex-row gap-6 justify-center animate-fade-in-up delay-300">
             <Button variant="primary" className="px-10 py-4 text-lg font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300" onClick={handleBookNow}>Book Tickets Now</Button>
             <Button variant="outline" className="px-10 py-4 text-lg border-white/20 hover:bg-white/10 backdrop-blur-sm transition-all duration-300" onClick={() => document.getElementById('movies').scrollIntoView({ behavior: 'smooth' })}>View Showtimes</Button>
+          </div>
+
+          {/* Brand Partners */}
+          <div className="mt-16 animate-fade-in-up delay-400">
+            <div className="inline-flex flex-wrap justify-center items-center gap-6 md:gap-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 md:px-10 md:py-8 max-w-4xl mx-auto shadow-2xl hover:border-white/20 transition-all duration-300">
+              <img src={BMS} alt="BookMyShow" className="h-6 md:h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" />
+              <div className="h-8 w-px bg-white/10 hidden md:block"></div>
+              <img src={Laser4K} alt="4K Laser" className="h-5 md:h-7 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" />
+              <img src={Dolby} alt="Dolby Atmos" className="h-5 md:h-7 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" />
+              <img src={Qube} alt="Qube Cinema" className="h-5 md:h-7 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" />
+              <div className="h-8 w-px bg-white/10 hidden md:block"></div>
+              <img src={Barco} alt="Barco" className="h-4 md:h-6 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" />
+              <img src={Christie} alt="Christie" className="h-4 md:h-6 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" />
+              <img src={ThreeD} alt="3D" className="h-5 md:h-7 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0" />
+            </div>
+            <p className="text-white/40 text-xs mt-4 uppercase tracking-widest font-medium">Powered by World-Class Tech</p>
           </div>
         </div >
       </section >
