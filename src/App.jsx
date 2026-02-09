@@ -65,7 +65,6 @@ function App() {
       rating: "9.0",
       duration: "2h 15m",
       image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/erracheera-et00368861-1693827536.jpg",
-      description: "A gripping tale of mystery and suspense.",
       bookUrl: "https://in.bookmyshow.com/cinemas/madanapalle/siddartha-cinemasscreen-2-dolby-lasermadanapalle/buytickets/MSDR/",
       showTimes: ["11:00 AM"]
     },
