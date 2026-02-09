@@ -220,29 +220,33 @@ function App() {
           {/* Brand Partners */}
           <div className="mt-8 animate-fade-in-up delay-400 w-full max-w-screen-xl mx-auto px-4">
             {/* Mobile: Auto-scrolling carousel */}
-            <div className="md:hidden overflow-hidden w-full bg-white rounded-2xl p-[5px] shadow-2xl">
-              <div className="flex w-max animate-scroll-logos">
-                {/* First set of logos */}
-                <div className="flex items-center gap-4 shrink-0 pr-4">
-                  <img src={Qube} alt="Qube Cinema" className="h-6 w-auto object-contain" />
-                  <img src={Dolby} alt="Dolby Atmos" className="h-8 w-auto object-contain" />
-                  <img src={Barco} alt="Barco" className="h-6 w-auto object-contain" />
-                  <img src={Christie} alt="Christie" className="h-5 w-auto object-contain" />
-                  <img src={BMS} alt="BookMyShow" className="h-6 w-auto object-contain" />
-                  <img src={Galalite} alt="Galalite Screens" className="h-8 w-auto object-contain" />
-                  <img src={Laser4K} alt="4K Laser" className="h-6 w-auto object-contain" />
-                  <img src={ThreeD} alt="3D" className="h-8 w-auto object-contain" />
+            <div className="md:hidden overflow-hidden">
+              <div className="flex animate-scroll-logos">
+                {/* First set with white background */}
+                <div className="shrink-0 pr-4">
+                  <div className="flex items-center gap-4 bg-white rounded-2xl p-[5px] shadow-2xl">
+                    <img src={Qube} alt="Qube Cinema" className="h-6 w-auto object-contain" />
+                    <img src={Dolby} alt="Dolby Atmos" className="h-8 w-auto object-contain" />
+                    <img src={Barco} alt="Barco" className="h-6 w-auto object-contain" />
+                    <img src={Christie} alt="Christie" className="h-5 w-auto object-contain" />
+                    <img src={BMS} alt="BookMyShow" className="h-6 w-auto object-contain" />
+                    <img src={Galalite} alt="Galalite Screens" className="h-8 w-auto object-contain" />
+                    <img src={Laser4K} alt="4K Laser" className="h-6 w-auto object-contain" />
+                    <img src={ThreeD} alt="3D" className="h-8 w-auto object-contain" />
+                  </div>
                 </div>
                 {/* Duplicated set for seamless loop */}
-                <div className="flex items-center gap-4 shrink-0 pr-4">
-                  <img src={Qube} alt="Qube Cinema" className="h-6 w-auto object-contain" />
-                  <img src={Dolby} alt="Dolby Atmos" className="h-8 w-auto object-contain" />
-                  <img src={Barco} alt="Barco" className="h-6 w-auto object-contain" />
-                  <img src={Christie} alt="Christie" className="h-5 w-auto object-contain" />
-                  <img src={BMS} alt="BookMyShow" className="h-6 w-auto object-contain" />
-                  <img src={Galalite} alt="Galalite Screens" className="h-8 w-auto object-contain" />
-                  <img src={Laser4K} alt="4K Laser" className="h-6 w-auto object-contain" />
-                  <img src={ThreeD} alt="3D" className="h-8 w-auto object-contain" />
+                <div className="shrink-0 pr-4">
+                  <div className="flex items-center gap-4 bg-white rounded-2xl p-[5px] shadow-2xl">
+                    <img src={Qube} alt="Qube Cinema" className="h-6 w-auto object-contain" />
+                    <img src={Dolby} alt="Dolby Atmos" className="h-8 w-auto object-contain" />
+                    <img src={Barco} alt="Barco" className="h-6 w-auto object-contain" />
+                    <img src={Christie} alt="Christie" className="h-5 w-auto object-contain" />
+                    <img src={BMS} alt="BookMyShow" className="h-6 w-auto object-contain" />
+                    <img src={Galalite} alt="Galalite Screens" className="h-8 w-auto object-contain" />
+                    <img src={Laser4K} alt="4K Laser" className="h-6 w-auto object-contain" />
+                    <img src={ThreeD} alt="3D" className="h-8 w-auto object-contain" />
+                  </div>
                 </div>
               </div>
             </div>
