@@ -226,8 +226,8 @@ function App() {
               <img src={Qube} alt="Qube Cinema" className="h-6 md:h-10 w-auto object-contain shrink-0" />
               <img src={Galalite} alt="Galalite Screens" className="h-8 md:h-12 w-auto object-contain shrink-0" />
               <img src={Barco} alt="Barco" className="h-6 md:h-10 w-auto object-contain shrink-0" />
-              <img src={Christie} alt="Christie" className="h-6 md:h-10 w-auto object-contain shrink-0" />
-              <img src={ThreeD} alt="3D" className="h-6 md:h-10 w-auto object-contain shrink-0" />
+              <img src={Christie} alt="Christie" className="h-5 md:h-8 w-auto object-contain shrink-0" />
+              <img src={ThreeD} alt="3D" className="h-8 md:h-12 w-auto object-contain shrink-0" />
             </div>
             <p className="text-white/40 text-xs mt-4 uppercase tracking-widest font-medium">Powered by World-Class Tech</p>
           </div>
