@@ -6,6 +6,7 @@ import MovieCard from './components/ui/MovieCard';
 import Modal from './components/ui/Modal';
 import MovieDetails from './components/features/MovieDetails';
 import SeatSelection from './components/features/SeatSelection';
+import InstallPWA from './components/features/InstallPWA';
 import { AnimatePresence, motion } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
 import heroBg from './assets/Screen2_Main.PNG';
@@ -147,9 +148,30 @@ function App() {
     setBookingStep('confirmation');
   };
 
+
+  const scrollRef = React.useRef(null);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        // Check if we are at the end (with a small buffer)
+        if (scrollLeft + clientWidth >= scrollWidth - 10) {
+          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' }); // Scroll by approximately card width
+        }
+      }
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="bg-background min-h-screen flex flex-col font-sans text-white" >
       <Navbar />
+
+      {/* Hero Section */}
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden" >
@@ -189,9 +211,14 @@ function App() {
           <Button variant="ghost" className="hidden md:block">View All</Button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-8">
+        {/* Mobile: Swipeable Carousel, Desktop: Grid */}
+        <div
+          ref={scrollRef}
+          className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 md:grid md:grid-cols-5 md:gap-8 md:overflow-visible no-scrollbar"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           {nowShowing.map((movie, index) => (
-            <div key={index} onClick={() => handleMovieClick(movie)} className="cursor-pointer max-w-sm mx-auto lg:max-w-none lg:mx-0">
+            <div key={index} onClick={() => handleMovieClick(movie)} className="min-w-[85%] snap-center cursor-pointer md:min-w-0 md:w-auto">
               <MovieCard {...movie} isPrimary={true} buttonText="Book Now" />
             </div>
           ))}
@@ -234,6 +261,9 @@ function App() {
 
       {/* Location Section */}
       <Location />
+
+      {/* Install PWA Prompt */}
+      <InstallPWA />
 
       <Footer />
 

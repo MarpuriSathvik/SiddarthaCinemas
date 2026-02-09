@@ -18,7 +18,7 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'Home', href: '#' },
-        { name: 'Movies', href: '#movies' },
+        { name: 'Now Screening', href: '#movies' },
         { name: 'Coming Soon', href: '#upcoming' },
         { name: 'Location', href: '#location' },
         { name: 'Contact', href: '#contact' },
@@ -103,6 +103,28 @@ const Navbar = () => {
                             {link.name}
                         </a>
                     ))}
+                    <div className="flex gap-6 py-2">
+                        <a
+                            href="https://www.instagram.com/siddarthacinemas_madanapalle/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2"
+                            aria-label="Instagram"
+                        >
+                            <Instagram className="w-6 h-6" />
+                            <span className="text-sm font-medium">Instagram</span>
+                        </a>
+                        <a
+                            href="https://www.facebook.com/SiddarthaCinemas/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2"
+                            aria-label="Facebook"
+                        >
+                            <Facebook className="w-6 h-6" />
+                            <span className="text-sm font-medium">Facebook</span>
+                        </a>
+                    </div>
                     <Button
                         className="w-full"
                         onClick={() => window.open("https://in.bookmyshow.com/cinemas/madanapalle/siddartha-cinemasscreen-2-dolby-lasermadanapalle/buytickets/MSDR/20260209", "_blank")}
