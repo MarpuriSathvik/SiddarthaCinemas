@@ -229,7 +229,7 @@ function App() {
               <img src={Laser4K} alt="4K Laser" className="h-6 md:h-10 w-auto object-contain shrink-0" />
               <img src={ThreeD} alt="3D" className="h-8 md:h-12 w-auto object-contain shrink-0" />
             </div>
-            <p className="text-white/40 text-xs mt-4 uppercase tracking-widest font-medium">Powered by World-Class Tech</p>
+            <p className="text-white/40 text-xs mt-4 uppercase tracking-widest font-medium">Powered by World-Class Technology</p>
           </div>
         </div >
       </section >
