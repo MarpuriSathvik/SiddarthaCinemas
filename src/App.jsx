@@ -75,7 +75,6 @@ function App() {
       rating: "9.8",
       duration: "2h 10m",
       image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/one-4-et00483309-1769237936.jpg",
-      description: "An action-packed thriller that keeps you on the edge of your seat.",
       bookUrl: "https://in.bookmyshow.com/cinemas/madanapalle/siddartha-cinemasscreen-2-dolby-lasermadanapalle/buytickets/MSDR/",
       showTimes: ["02:00 PM"]
     },
@@ -85,7 +84,6 @@ function App() {
       rating: "9.6",
       duration: "2h 25m",
       image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/sumathi-sathakam-et00482790-1769493591.jpg",
-      description: "A heartwarming family drama with a powerful message.",
       bookUrl: "https://in.bookmyshow.com/cinemas/madanapalle/siddartha-cinemasscreen-2-dolby-lasermadanapalle/buytickets/MSDR/",
       showTimes: ["06:15 PM", "09:15 PM"]
     }
