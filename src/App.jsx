@@ -220,13 +220,13 @@ function App() {
           {/* Brand Partners */}
           <div className="mt-8 animate-fade-in-up delay-400 w-full max-w-screen-xl mx-auto px-4">
             <div className="flex flex-nowrap justify-between items-center gap-1 md:gap-2 bg-white rounded-2xl p-[5px] shadow-2xl overflow-x-auto no-scrollbar">
-              <img src={BMS} alt="BookMyShow" className="h-6 md:h-10 w-auto object-contain shrink-0" />
-              <img src={Laser4K} alt="4K Laser" className="h-6 md:h-10 w-auto object-contain shrink-0" />
-              <img src={Dolby} alt="Dolby Atmos" className="h-8 md:h-12 w-auto object-contain shrink-0" />
               <img src={Qube} alt="Qube Cinema" className="h-6 md:h-10 w-auto object-contain shrink-0" />
-              <img src={Galalite} alt="Galalite Screens" className="h-8 md:h-12 w-auto object-contain shrink-0" />
+              <img src={Dolby} alt="Dolby Atmos" className="h-8 md:h-12 w-auto object-contain shrink-0" />
               <img src={Barco} alt="Barco" className="h-6 md:h-10 w-auto object-contain shrink-0" />
               <img src={Christie} alt="Christie" className="h-5 md:h-8 w-auto object-contain shrink-0" />
+              <img src={BMS} alt="BookMyShow" className="h-6 md:h-10 w-auto object-contain shrink-0" />
+              <img src={Galalite} alt="Galalite Screens" className="h-8 md:h-12 w-auto object-contain shrink-0" />
+              <img src={Laser4K} alt="4K Laser" className="h-6 md:h-10 w-auto object-contain shrink-0" />
               <img src={ThreeD} alt="3D" className="h-8 md:h-12 w-auto object-contain shrink-0" />
             </div>
             <p className="text-white/40 text-xs mt-4 uppercase tracking-widest font-medium">Powered by World-Class Tech</p>
