@@ -43,7 +43,7 @@ function App() {
     {
       title: "Erracheera",
       genre: "Telugu (A)",
-      rating: "8.5",
+      rating: "9.0",
       duration: "2h 15m",
       image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/erracheera-et00368861-1693827536.jpg",
       description: "A gripping tale of mystery and suspense.",
@@ -53,7 +53,7 @@ function App() {
     {
       title: "One/4",
       genre: "Telugu (UA16+)",
-      rating: "8.2",
+      rating: "9.8",
       duration: "2h 10m",
       image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/one-4-et00483309-1769237936.jpg",
       description: "An action-packed thriller that keeps you on the edge of your seat.",
@@ -63,7 +63,7 @@ function App() {
     {
       title: "Sumathi Sathakam",
       genre: "Telugu (UA13+)",
-      rating: "9.1",
+      rating: "9.6",
       duration: "2h 25m",
       image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/sumathi-sathakam-et00482790-1769493591.jpg",
       description: "A heartwarming family drama with a powerful message.",
@@ -240,15 +240,15 @@ function App() {
         {/* Mobile: 2x2 grid showing 4 movies, Desktop: Show all in a row */}
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-8">
           {(viewAllUpcoming ? upcomingMovies : upcomingMovies.slice(0, 5)).map((movie, index) => (
-            <div key={index} className="cursor-pointer">
+            <div key={index} className={`cursor-pointer ${!viewAllUpcoming && index === 4 ? 'hidden lg:block' : ''}`}>
               <MovieCard {...movie} isPrimary={true} buttonText="View" />
             </div>
           ))}
         </div>
 
-        {/* View More/Less Button - Shows when there are more than 5 movies */}
-        {upcomingMovies.length > 5 && (
-          <div className="mt-8 text-center">
+        {/* View More/Less Button - Shows when there are more than 4 movies on mobile, or 5 on desktop */}
+        {upcomingMovies.length > 4 && (
+          <div className={`mt-8 text-center ${upcomingMovies.length === 5 ? 'lg:hidden' : ''}`}>
             <Button
               variant="ghost"
               onClick={() => setViewAllUpcoming(!viewAllUpcoming)}
