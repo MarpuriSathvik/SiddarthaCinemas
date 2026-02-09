@@ -192,7 +192,7 @@ function App() {
             <span className="font-sans font-light tracking-wide text-white/90">Experience</span>
           </h1>
           <p className="text-gray-300 text-lg md:text-xl mb-12 max-w-2xl mx-auto animate-fade-in-up delay-200 font-light leading-relaxed">
-            Immerse yourself in crystal clear 4K visuals and earth-shattering Dolby Atmos sound at Siddartha Cinemas.
+            Immerse yourself in crystal clear 4K visuals and earth-shattering Dolby sound at Siddartha Cinemas.
           </p>
           <div className="flex flex-col md:flex-row gap-6 justify-center animate-fade-in-up delay-300">
             <Button variant="primary" className="px-10 py-4 text-lg font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300" onClick={handleBookNow}>Book Tickets Now</Button>
@@ -239,15 +239,15 @@ function App() {
 
         {/* Mobile: 2x2 grid showing 4 movies, Desktop: Show all in a row */}
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-8">
-          {(viewAllUpcoming ? upcomingMovies : upcomingMovies.slice(0, 4)).map((movie, index) => (
+          {(viewAllUpcoming ? upcomingMovies : upcomingMovies.slice(0, 5)).map((movie, index) => (
             <div key={index} className="cursor-pointer">
               <MovieCard {...movie} isPrimary={true} buttonText="View" />
             </div>
           ))}
         </div>
 
-        {/* View More/Less Button - Shows when there are more than 4 movies */}
-        {upcomingMovies.length > 4 && (
+        {/* View More/Less Button - Shows when there are more than 5 movies */}
+        {upcomingMovies.length > 5 && (
           <div className="mt-8 text-center">
             <Button
               variant="ghost"
