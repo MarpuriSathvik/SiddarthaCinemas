@@ -199,7 +199,7 @@ function App() {
         <div className="relative z-10 text-center max-w-5xl px-6 mt-16" >
           <h1 className="text-6xl md:text-8xl font-heading font-bold mb-8 leading-tight animate-fade-in-up delay-100 drop-shadow-2xl">
             Welcome to <span className="text-primary">SIDDARTHA</span> <br />
-            <span className="font-sans font-light tracking-wide text-white/90 text-2xl md:text-5xl block mt-4">Your Movie Place</span>
+            <span className="font-sans font-light tracking-wide text-white/90 text-xl md:text-3xl block mt-4">Where Every Seat Feels Premium</span>
           </h1>
           <p className="text-gray-300 text-lg md:text-xl mb-12 max-w-2xl mx-auto animate-fade-in-up delay-200 font-light leading-relaxed">
             Experience crystal-clear 4K visuals, powerful Dolby sound, and luxurious push-back seating at Siddartha Cinemas, Madanapalle.
