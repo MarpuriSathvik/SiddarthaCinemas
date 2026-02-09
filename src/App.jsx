@@ -196,18 +196,14 @@ function App() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden" >
         {/* Background Image */}
         <div className="absolute inset-0" >
-          {/* Desktop/Tablet Background */}
-          <img
-            src={heroBg}
-            alt="Hero Background"
-            className="hidden md:block w-full h-full object-cover opacity-60"
-          />
-          {/* Mobile Background */}
-          <img
-            src={mobileHeroBg}
-            alt="Hero Background"
-            className="md:hidden w-full h-full object-cover opacity-60"
-          />
+          <picture>
+            <source media="(min-width: 768px)" srcSet={heroBg} />
+            <img
+              src={mobileHeroBg}
+              alt="Hero Background"
+              className="w-full h-full object-cover opacity-60"
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-black/30" />
         </div >
 
