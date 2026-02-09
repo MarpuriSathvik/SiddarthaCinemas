@@ -14,6 +14,7 @@ import Location from './components/features/Location';
 import MovieCardSkeleton from './components/ui/MovieCardSkeleton';
 import Qube from './assets/Qube.png';
 import Laser4K from './assets/4K.png';
+import Galalite from './assets/galalite.jpeg';
 import Christie from './assets/Christe.jpg';
 import Barco from './assets/Barco.png';
 import Dolby from './assets/Dolby.png';
@@ -224,6 +225,7 @@ function App() {
               <img src={Laser4K} alt="4K Laser" className="h-6 md:h-10 w-auto object-contain shrink-0" />
               <img src={Dolby} alt="Dolby Atmos" className="h-6 md:h-10 w-auto object-contain shrink-0" />
               <img src={Qube} alt="Qube Cinema" className="h-6 md:h-10 w-auto object-contain shrink-0" />
+              <img src={Galalite} alt="Galalite Screens" className="h-6 md:h-10 w-auto object-contain shrink-0" />
               <div className="h-8 w-px bg-white/20 shrink-0"></div>
               <img src={Barco} alt="Barco" className="h-5 md:h-8 w-auto object-contain shrink-0" />
               <img src={Christie} alt="Christie" className="h-5 md:h-8 w-auto object-contain shrink-0" />
