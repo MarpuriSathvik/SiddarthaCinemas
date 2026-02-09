@@ -13,7 +13,7 @@ import heroBg from './assets/Screen2_Main.PNG';
 import Location from './components/features/Location';
 import MovieCardSkeleton from './components/ui/MovieCardSkeleton';
 import Qube from './assets/Qube.png';
-import Laser4K from './assets/4KLaser.png';
+import Laser4K from './assets/4K.png';
 import Christie from './assets/Christe.jpg';
 import Barco from './assets/Barco.png';
 import Dolby from './assets/Dolby.png';
