@@ -219,16 +219,14 @@ function App() {
 
           {/* Brand Partners */}
           <div className="mt-16 animate-fade-in-up delay-400 w-full max-w-screen-xl mx-auto px-4">
-            <div className="flex flex-nowrap justify-between items-center gap-4 md:gap-8 bg-white border-2 border-white rounded-2xl p-4 md:p-6 shadow-2xl overflow-x-auto no-scrollbar">
+            <div className="flex flex-nowrap justify-between items-center gap-6 md:gap-8 bg-white border-2 border-white rounded-2xl p-4 md:p-6 shadow-2xl overflow-x-auto no-scrollbar">
               <img src={BMS} alt="BookMyShow" className="h-6 md:h-10 w-auto object-contain shrink-0" />
-              <div className="h-8 w-px bg-white/20 shrink-0"></div>
               <img src={Laser4K} alt="4K Laser" className="h-6 md:h-10 w-auto object-contain shrink-0" />
               <img src={Dolby} alt="Dolby Atmos" className="h-6 md:h-10 w-auto object-contain shrink-0" />
               <img src={Qube} alt="Qube Cinema" className="h-6 md:h-10 w-auto object-contain shrink-0" />
               <img src={Galalite} alt="Galalite Screens" className="h-6 md:h-10 w-auto object-contain shrink-0" />
-              <div className="h-8 w-px bg-white/20 shrink-0"></div>
-              <img src={Barco} alt="Barco" className="h-5 md:h-8 w-auto object-contain shrink-0" />
-              <img src={Christie} alt="Christie" className="h-5 md:h-8 w-auto object-contain shrink-0" />
+              <img src={Barco} alt="Barco" className="h-6 md:h-10 w-auto object-contain shrink-0" />
+              <img src={Christie} alt="Christie" className="h-6 md:h-10 w-auto object-contain shrink-0" />
               <img src={ThreeD} alt="3D" className="h-6 md:h-10 w-auto object-contain shrink-0" />
             </div>
             <p className="text-white/40 text-xs mt-4 uppercase tracking-widest font-medium">Powered by World-Class Tech</p>
