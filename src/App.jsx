@@ -219,17 +219,46 @@ function App() {
 
           {/* Brand Partners */}
           <div className="mt-8 animate-fade-in-up delay-400 w-full max-w-screen-xl mx-auto px-4">
-            <div className="flex flex-nowrap justify-between items-center gap-1 md:gap-2 bg-white rounded-2xl p-[5px] shadow-2xl overflow-x-auto no-scrollbar">
-              <img src={Qube} alt="Qube Cinema" className="h-6 md:h-10 w-auto object-contain shrink-0" />
-              <img src={Dolby} alt="Dolby Atmos" className="h-8 md:h-12 w-auto object-contain shrink-0" />
-              <img src={Barco} alt="Barco" className="h-6 md:h-10 w-auto object-contain shrink-0" />
-              <img src={Christie} alt="Christie" className="h-5 md:h-8 w-auto object-contain shrink-0" />
-              <img src={BMS} alt="BookMyShow" className="h-6 md:h-10 w-auto object-contain shrink-0" />
-              <img src={Galalite} alt="Galalite Screens" className="h-8 md:h-12 w-auto object-contain shrink-0" />
-              <img src={Laser4K} alt="4K Laser" className="h-6 md:h-10 w-auto object-contain shrink-0" />
-              <img src={ThreeD} alt="3D" className="h-8 md:h-12 w-auto object-contain shrink-0" />
+            {/* Mobile: Auto-scrolling carousel */}
+            <div className="md:hidden overflow-hidden">
+              <div className="inline-flex gap-4 animate-scroll-logos">
+                {/* First set with white background */}
+                <div className="flex items-center gap-4 bg-white rounded-2xl p-[5px] shadow-2xl shrink-0">
+                  <img src={Qube} alt="Qube Cinema" className="h-6 w-auto object-contain" />
+                  <img src={Dolby} alt="Dolby Atmos" className="h-8 w-auto object-contain" />
+                  <img src={Barco} alt="Barco" className="h-6 w-auto object-contain" />
+                  <img src={Christie} alt="Christie" className="h-5 w-auto object-contain" />
+                  <img src={BMS} alt="BookMyShow" className="h-6 w-auto object-contain" />
+                  <img src={Galalite} alt="Galalite Screens" className="h-8 w-auto object-contain" />
+                  <img src={Laser4K} alt="4K Laser" className="h-6 w-auto object-contain" />
+                  <img src={ThreeD} alt="3D" className="h-8 w-auto object-contain" />
+                </div>
+                {/* Duplicated set for seamless loop */}
+                <div className="flex items-center gap-4 bg-white rounded-2xl p-[5px] shadow-2xl shrink-0">
+                  <img src={Qube} alt="Qube Cinema" className="h-6 w-auto object-contain" />
+                  <img src={Dolby} alt="Dolby Atmos" className="h-8 w-auto object-contain" />
+                  <img src={Barco} alt="Barco" className="h-6 w-auto object-contain" />
+                  <img src={Christie} alt="Christie" className="h-5 w-auto object-contain" />
+                  <img src={BMS} alt="BookMyShow" className="h-6 w-auto object-contain" />
+                  <img src={Galalite} alt="Galalite Screens" className="h-8 w-auto object-contain" />
+                  <img src={Laser4K} alt="4K Laser" className="h-6 w-auto object-contain" />
+                  <img src={ThreeD} alt="3D" className="h-8 w-auto object-contain" />
+                </div>
+              </div>
             </div>
-            <p className="text-white/40 text-xs mt-4 uppercase tracking-widest font-medium">Powered by World-Class Technology</p>
+
+            {/* Desktop: Static layout */}
+            <div className="hidden md:flex flex-nowrap justify-between items-center gap-1 md:gap-2 bg-white rounded-2xl p-[5px] shadow-2xl overflow-x-auto no-scrollbar">
+              <img src={Qube} alt="Qube Cinema" className="h-10 w-auto object-contain shrink-0" />
+              <img src={Dolby} alt="Dolby Atmos" className="h-12 w-auto object-contain shrink-0" />
+              <img src={Barco} alt="Barco" className="h-10 w-auto object-contain shrink-0" />
+              <img src={Christie} alt="Christie" className="h-8 w-auto object-contain shrink-0" />
+              <img src={BMS} alt="BookMyShow" className="h-10 w-auto object-contain shrink-0" />
+              <img src={Galalite} alt="Galalite Screens" className="h-12 w-auto object-contain shrink-0" />
+              <img src={Laser4K} alt="4K Laser" className="h-10 w-auto object-contain shrink-0" />
+              <img src={ThreeD} alt="3D" className="h-12 w-auto object-contain shrink-0" />
+            </div>
+            <p className="text-white/40 text-xs mt-4 uppercase tracking-widest font-medium text-center">Powered by World-Class Technology</p>
           </div>
         </div >
       </section >
