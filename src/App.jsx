@@ -10,6 +10,7 @@ import InstallPWA from './components/features/InstallPWA';
 import { AnimatePresence, motion } from 'framer-motion';
 import checkCircle from 'lucide-react';
 import heroBg from './assets/Screen2_Main.webp';
+import mobileHeroBg from './assets/Mobile_HEROGB.webp';
 import Location from './components/features/Location';
 import MovieCardSkeleton from './components/ui/MovieCardSkeleton';
 import Qube from './assets/Qube.webp';
@@ -195,10 +196,17 @@ function App() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden" >
         {/* Background Image */}
         <div className="absolute inset-0" >
+          {/* Desktop/Tablet Background */}
           <img
             src={heroBg}
             alt="Hero Background"
-            className="w-full h-full object-cover opacity-60"
+            className="hidden md:block w-full h-full object-cover opacity-60"
+          />
+          {/* Mobile Background */}
+          <img
+            src={mobileHeroBg}
+            alt="Hero Background"
+            className="md:hidden w-full h-full object-cover opacity-60"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-black/30" />
         </div >
