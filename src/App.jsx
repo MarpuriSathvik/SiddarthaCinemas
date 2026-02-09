@@ -9,16 +9,16 @@ import SeatSelection from './components/features/SeatSelection';
 import InstallPWA from './components/features/InstallPWA';
 import { AnimatePresence, motion } from 'framer-motion';
 import checkCircle from 'lucide-react';
-import heroBg from './assets/Screen2_Main.PNG';
+import heroBg from './assets/Screen2_Main.webp';
 import Location from './components/features/Location';
 import MovieCardSkeleton from './components/ui/MovieCardSkeleton';
-import Qube from './assets/Qube.png';
-import Laser4K from './assets/4K.png';
-import Christie from './assets/Christe.png';
-import Barco from './assets/Barco.png';
-import Dolby from './assets/Dolby.png';
-import ThreeD from './assets/3D.png';
-import Galalite from './assets/Galalite.png';
+import Qube from './assets/Qube.webp';
+import Laser4K from './assets/4K.webp';
+import Christie from './assets/Christe.webp';
+import Barco from './assets/Barco.webp';
+import Dolby from './assets/Dolby.webp';
+import ThreeD from './assets/3D.webp';
+import Galalite from './assets/Galalite.webp';
 import BMS from './assets/BookMyShow.svg';
 
 function App() {

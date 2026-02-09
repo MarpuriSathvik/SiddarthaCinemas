@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Instagram, Facebook } from 'lucide-react';
 import { clsx } from 'clsx';
 import Button from '../ui/Button';
-import logo from '../../assets/Logo_main.png';
+import logo from '../../assets/Logo_main.webp';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
