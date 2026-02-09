@@ -14,11 +14,11 @@ import Location from './components/features/Location';
 import MovieCardSkeleton from './components/ui/MovieCardSkeleton';
 import Qube from './assets/Qube.png';
 import Laser4K from './assets/4K.png';
-import Galalite from './assets/galalite.jpeg';
 import Christie from './assets/Christe.jpg';
 import Barco from './assets/Barco.png';
 import Dolby from './assets/Dolby.png';
 import ThreeD from './assets/3D.png';
+import Galalite from './assets/Galalite.png';
 import BMS from './assets/BookMyShow.svg';
 
 function App() {
@@ -219,7 +219,7 @@ function App() {
 
           {/* Brand Partners */}
           <div className="mt-16 animate-fade-in-up delay-400 w-full max-w-screen-xl mx-auto px-4">
-            <div className="flex flex-nowrap justify-between items-center gap-3 md:gap-4 bg-white border-2 border-white rounded-2xl p-[9px] shadow-2xl overflow-x-auto no-scrollbar">
+            <div className="flex flex-nowrap justify-between items-center gap-3 md:gap-4 bg-white border-2 border-white rounded-2xl p-[7px] shadow-2xl overflow-x-auto no-scrollbar">
               <img src={BMS} alt="BookMyShow" className="h-6 md:h-10 w-auto object-contain shrink-0" />
               <img src={Laser4K} alt="4K Laser" className="h-6 md:h-10 w-auto object-contain shrink-0" />
               <img src={Dolby} alt="Dolby Atmos" className="h-8 md:h-12 w-auto object-contain shrink-0" />
