@@ -6,7 +6,7 @@ const MovieCard = ({ title, genre, rating, duration, image, releaseDate, bookUrl
     return (
         <div className="group relative bg-surface rounded-xl overflow-hidden shadow-lg border border-white/5 transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
             {/* Image Overlay */}
-            <div className="relative aspect-[2/3] overflow-hidden">
+            <div className="relative aspect-[3/4] md:aspect-[2/3] overflow-hidden">
                 <img
                     src={image || "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=800"}
                     alt={title}
@@ -24,11 +24,11 @@ const MovieCard = ({ title, genre, rating, duration, image, releaseDate, bookUrl
             </div>
 
             {/* Content */}
-            <div className="p-4">
-                <h3 className="text-xl font-heading font-bold text-white mb-1 truncate">{title}</h3>
-                <p className="text-gray-400 text-sm mb-3">{genre}</p>
+            <div className="p-3 md:p-4">
+                <h3 className="text-lg md:text-xl font-heading font-bold text-white mb-1 truncate">{title}</h3>
+                <p className="text-gray-400 text-xs md:text-sm mb-2 md:mb-3">{genre}</p>
 
-                <div className="flex flex-col gap-2 text-xs text-gray-500 mb-4">
+                <div className="flex flex-col gap-2 text-xs text-gray-500 mb-3 md:mb-4">
                     <div className="flex items-center gap-4">
                         {duration && (
                             <div className="flex items-center gap-1">
@@ -46,11 +46,11 @@ const MovieCard = ({ title, genre, rating, duration, image, releaseDate, bookUrl
                 </div>
 
                 {showTimes && (
-                    <div className="mb-4">
-                        <p className="text-xs font-semibold text-primary mb-2 uppercase tracking-wide">Showtimes</p>
+                    <div className="mb-3 md:mb-4">
+                        <p className="text-sm md:text-xs font-semibold text-primary mb-2 uppercase tracking-wide">Showtimes</p>
                         <div className="flex flex-wrap gap-2">
                             {showTimes.map((time, index) => (
-                                <span key={index} className="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded text-gray-300 hover:bg-primary/20 hover:border-primary/30 hover:text-primary transition-colors cursor-default">
+                                <span key={index} className="text-sm md:text-xs bg-white/5 border border-white/10 px-3 py-1.5 md:px-2 md:py-1 rounded text-gray-300 hover:bg-primary/20 hover:border-primary/30 hover:text-primary transition-colors cursor-default">
                                     {time}
                                 </span>
                             ))}
@@ -60,7 +60,7 @@ const MovieCard = ({ title, genre, rating, duration, image, releaseDate, bookUrl
 
                 <Button
                     variant={isPrimary ? "primary" : "outline"}
-                    className="w-full text-base font-bold py-3 md:py-2 md:text-sm"
+                    className="w-full text-sm md:text-base font-bold py-2.5 md:py-3"
                     onClick={(e) => {
                         e.stopPropagation();
                         if (bookUrl) {

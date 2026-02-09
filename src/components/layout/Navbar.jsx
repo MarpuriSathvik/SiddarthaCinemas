@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Film } from 'lucide-react';
+import { Menu, X, Instagram, Facebook } from 'lucide-react';
 import { clsx } from 'clsx';
 import Button from '../ui/Button';
+import logo from '../../assets/Logo_main.png';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -32,15 +33,15 @@ const Navbar = () => {
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
                 <a href="#" className="flex items-center gap-2 group">
-                    <Film className="w-8 h-8 text-primary group-hover:rotate-12 transition-transform" />
-                    <span className="text-2xl font-heading font-bold text-white tracking-wide">
-                        Siddartha<span className="text-primary">Cinemas</span>
+                    <img src={logo} alt="Siddartha Cinemas" className="w-8 h-8 object-contain group-hover:scale-110 transition-transform" />
+                    <span className="font-heading font-bold text-white tracking-wide" style={{ fontSize: '27.5px' }}>
+                        Siddartha <span className="text-primary">Cinemas</span>
                     </span>
                 </a>
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center gap-8">
-                    <div className="flex gap-6">
+                    <div className="flex gap-6 items-center">
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
@@ -50,6 +51,27 @@ const Navbar = () => {
                                 {link.name}
                             </a>
                         ))}
+                        {/* Social Media Icons */}
+                        <div className="flex gap-3 ml-2">
+                            <a
+                                href="https://www.instagram.com/siddarthacinemas_madanapalle/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-300 hover:text-primary transition-colors"
+                                aria-label="Instagram"
+                            >
+                                <Instagram className="w-5 h-5" />
+                            </a>
+                            <a
+                                href="https://www.facebook.com/SiddarthaCinemas/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-300 hover:text-primary transition-colors"
+                                aria-label="Facebook"
+                            >
+                                <Facebook className="w-5 h-5" />
+                            </a>
+                        </div>
                     </div>
                     <Button
                         variant="primary"

@@ -73,13 +73,6 @@ function App() {
 
   const upcomingMovies = [
     {
-      title: "Funky",
-      genre: "Comedy / Drama",
-      releaseDate: "February 13, 2026",
-      image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/funky-et00424011-1762494325.jpg",
-      bookUrl: "https://in.bookmyshow.com/movies/madanapalle/funky/ET00424011"
-    },
-    {
       title: "Dhurandhar: The Revenge",
       genre: "Action / Drama",
       releaseDate: "March 19, 2026",
@@ -196,9 +189,9 @@ function App() {
           <Button variant="ghost" className="hidden md:block">View All</Button>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-8">
           {nowShowing.map((movie, index) => (
-            <div key={index} onClick={() => handleMovieClick(movie)} className="cursor-pointer">
+            <div key={index} onClick={() => handleMovieClick(movie)} className="cursor-pointer max-w-sm mx-auto lg:max-w-none lg:mx-0">
               <MovieCard {...movie} isPrimary={true} buttonText="Book Now" />
             </div>
           ))}
@@ -209,7 +202,7 @@ function App() {
       </section >
 
       {/* Upcoming Movies Section */}
-      <section id="upcoming" className={`py-24 bg-surface/30 container mx-auto px-10 md:px-6 ${isComingSoonVisible ? 'block' : 'hidden md:block'}`} >
+      <section id="upcoming" className="py-24 bg-surface/30 container mx-auto px-10 md:px-6" >
         <div className="flex justify-between items-end mb-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-2">Coming Soon</h2>
@@ -217,112 +210,99 @@ function App() {
           </div>
         </div>
 
-<<<<<<< HEAD
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-    {(showAllUpcoming ? upcomingMovies : upcomingMovies.slice(0, 4)).map((movie, index) => (
-=======
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+        {/* Mobile: 2x2 grid showing 4 movies, Desktop: Show all in a row */}
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-8">
           {(viewAllUpcoming ? upcomingMovies : upcomingMovies.slice(0, 4)).map((movie, index) => (
->>>>>>> 7fadcf6 (Optimize mobile UI (scrollable bg, grid layout) and add desktop View More toggle for upcoming movies)
-      <div key={index} className="cursor-pointer">
-        <MovieCard {...movie} isPrimary={true} buttonText="View" />
-      </div>
-    ))}
-  </div>
+            <div key={index} className="cursor-pointer">
+              <MovieCard {...movie} isPrimary={true} buttonText="View" />
+            </div>
+          ))}
+        </div>
 
-  {
-    upcomingMovies.length > 4 && (
-<<<<<<< HEAD
-      <div className="mt-8 text-center">
-        <Button
-          variant="ghost"
-          onClick={() => setShowAllUpcoming(!showAllUpcoming)}
-        >
-          {showAllUpcoming ? "View Less" : "View More"}
-=======
-          <div className="mt-8 text-center hidden md:block">
+        {/* View More/Less Button - Shows when there are more than 4 movies */}
+        {upcomingMovies.length > 4 && (
+          <div className="mt-8 text-center">
             <Button
               variant="ghost"
               onClick={() => setViewAllUpcoming(!viewAllUpcoming)}
             >
-              {viewAllUpcoming ? 'Show Less' : 'View More'}
->>>>>>> 7fadcf6 (Optimize mobile UI (scrollable bg, grid layout) and add desktop View More toggle for upcoming movies)
+              {viewAllUpcoming ? 'View Less' : 'View More'}
             </Button>
           </div>
         )}
-        </section >
+      </section >
 
-        {/* Location Section */}
-        <Location />
+      {/* Location Section */}
+      <Location />
 
-        <Footer />
+      <Footer />
 
-        {/* Movie Details Modal */}
-        <Modal
-          isOpen={!!selectedMovie}
-          onClose={handleCloseModal}
-          title={bookingStep === 'seats' ? 'Select Seats' : (bookingStep === 'confirmation' ? 'Booking Confirmed' : 'Movie Details')}
-        >
-          <AnimatePresence mode="wait">
-            {bookingStep === 'details' && selectedMovie && (
-              <motion.div
-                key="details"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-              >
-                <MovieDetails movie={selectedMovie} onBookNow={handleBookNow} />
-              </motion.div>
-            )}
+      {/* Movie Details Modal */}
+      <Modal
+        isOpen={!!selectedMovie}
+        onClose={handleCloseModal}
+        title={bookingStep === 'seats' ? 'Select Seats' : (bookingStep === 'confirmation' ? 'Booking Confirmed' : 'Movie Details')}
+      >
+        <AnimatePresence mode="wait">
+          {bookingStep === 'details' && selectedMovie && (
+            <motion.div
+              key="details"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
+            >
+              <MovieDetails movie={selectedMovie} onBookNow={handleBookNow} />
+            </motion.div>
+          )}
 
-            {bookingStep === 'seats' && selectedMovie && (
-              <motion.div
-                key="seats"
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-              >
-                <SeatSelection
-                  movie={selectedMovie}
-                  onBack={() => setBookingStep('details')}
-                  onConfirm={handleConfirmBooking}
-                />
-              </motion.div>
-            )}
+          {bookingStep === 'seats' && selectedMovie && (
+            <motion.div
+              key="seats"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+            >
+              <SeatSelection
+                movie={selectedMovie}
+                onBack={() => setBookingStep('details')}
+                onConfirm={handleConfirmBooking}
+              />
+            </motion.div>
+          )}
 
-            {bookingStep === 'confirmation' && bookingData && (
-              <motion.div
-                key="confirmation"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center justify-center py-12 text-center"
-              >
-                <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mb-6">
-                  <CheckCircle className="w-10 h-10 text-primary" />
+          {bookingStep === 'confirmation' && bookingData && (
+            <motion.div
+              key="confirmation"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="flex flex-col items-center justify-center py-12 text-center"
+            >
+              <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mb-6">
+                <CheckCircle className="w-10 h-10 text-primary" />
+              </div>
+              <h3 className="text-3xl font-heading font-bold text-white mb-2">Booking Confirmed!</h3>
+              <p className="text-gray-400 mb-8 max-w-md">
+                Your tickets for <strong className="text-white">{bookingData.movie.title}</strong> have been booked successfully.
+              </p>
+              <div className="bg-surface p-6 rounded-lg border border-white/10 w-full max-w-sm mb-8">
+                <div className="flex justify-between mb-2">
+                  <span className="text-gray-400">Seats</span>
+                  <span className="font-bold text-white">{bookingData.seats.length}</span>
                 </div>
-                <h3 className="text-3xl font-heading font-bold text-white mb-2">Booking Confirmed!</h3>
-                <p className="text-gray-400 mb-8 max-w-md">
-                  Your tickets for <strong className="text-white">{bookingData.movie.title}</strong> have been booked successfully.
-                </p>
-                <div className="bg-surface p-6 rounded-lg border border-white/10 w-full max-w-sm mb-8">
-                  <div className="flex justify-between mb-2">
-                    <span className="text-gray-400">Seats</span>
-                    <span className="font-bold text-white">{bookingData.seats.length}</span>
-                  </div>
-                  <div className="flex justify-between mb-4">
-                    <span className="text-gray-400">Total Amount</span>
-                    <span className="font-bold text-primary">₹{bookingData.seats.length * 250}</span>
-                  </div>
-                  <div className="text-xs text-center text-gray-500">Booking ID: #SC-{Math.floor(Math.random() * 10000)}</div>
+                <div className="flex justify-between mb-4">
+                  <span className="text-gray-400">Total Amount</span>
+                  <span className="font-bold text-primary">₹{bookingData.seats.length * 250}</span>
                 </div>
-                <Button variant="primary" onClick={handleCloseModal}>Back to Home</Button>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </Modal>
+                <div className="text-xs text-center text-gray-500">Booking ID: #SC-{Math.floor(Math.random() * 10000)}</div>
+              </div>
+              <Button variant="primary" onClick={handleCloseModal}>Back to Home</Button>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </Modal>
 
-      </div >
-    );
-  }
+    </div >
+  );
+}
 
-  export default App;
+export default App;

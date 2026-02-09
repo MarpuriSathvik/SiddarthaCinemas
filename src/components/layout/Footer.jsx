@@ -3,13 +3,13 @@ import { Facebook, Instagram, MapPin, Phone, Mail } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="bg-black pt-16 pb-8 border-t border-white/10">
+        <footer id="contact" className="bg-black pt-16 pb-8 border-t border-white/10">
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                     {/* Brand */}
                     <div className="col-span-1 md:col-span-1">
                         <h3 className="text-2xl font-heading font-bold text-white mb-4">
-                            Siddartha<span className="text-primary">Cinemas</span>
+                            Siddartha <span className="text-primary">Cinemas</span>
                         </h3>
                         <p className="text-gray-400 text-sm leading-relaxed">
                             Experience the magic of cinema with cutting-edge technology and premium comfort. The best destination for movie lovers.
@@ -20,10 +20,10 @@ const Footer = () => {
                     <div>
                         <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Quick Links</h4>
                         <ul className="space-y-2">
-                            <li><a href="#" className="text-gray-400 hover:text-primary text-sm transition-colors">Now Showing</a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-primary text-sm transition-colors">Coming Soon</a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-primary text-sm transition-colors">Experiences</a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-primary text-sm transition-colors">About Us</a></li>
+                            <li><a href="#movies" className="text-gray-400 hover:text-primary text-sm transition-colors">Now Showing</a></li>
+                            <li><a href="#upcoming" className="text-gray-400 hover:text-primary text-sm transition-colors">Coming Soon</a></li>
+                            <li><a href="https://in.bookmyshow.com/cinemas/madanapalle/siddartha-cinemasscreen-2-dolby-lasermadanapalle/buytickets/MSDR/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary text-sm transition-colors">Book Now</a></li>
+                            <li><a href="#location" className="text-gray-400 hover:text-primary text-sm transition-colors">Location</a></li>
                         </ul>
                     </div>
 

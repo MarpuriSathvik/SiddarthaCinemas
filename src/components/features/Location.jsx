@@ -12,8 +12,8 @@ const Location = () => {
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
                     <span className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-4 block animate-fade-in-up">Find Us</span>
-                    <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 animate-fade-in-up delay-100">
-                        Visit <span className="text-primary italic">Siddartha</span> Cinemas
+                    <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-2">
+                        Visit <span className="text-primary">Siddartha</span> Cinemas
                     </h2>
                     <div className="h-1 w-20 bg-primary rounded-full mx-auto animate-fade-in-up delay-200"></div>
                 </div>
@@ -41,7 +41,12 @@ const Location = () => {
                         </p>
 
                         <div className="grid gap-6">
-                            <div className="flex items-start gap-4 p-6 rounded-xl bg-surface/50 border border-white/5 hover:border-primary/20 transition-colors group">
+                            <a
+                                href="https://www.google.com/maps/place/Siddartha+Cinemas+4K+Dolby/@13.5585595,78.497825,17z/data=!3m1!4b1!4m6!3m5!1s0x3bb266744a1ed5ad:0xbdaff84869d4fe0d!8m2!3d13.5585543!4d78.5004053!16s%2Fg%2F11bvt4_x6_"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-start gap-4 p-6 rounded-xl bg-surface/50 border border-white/5 hover:border-primary/20 transition-colors group cursor-pointer"
+                            >
                                 <div className="p-3 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-black transition-all">
                                     <MapPin className="w-6 h-6" />
                                 </div>
@@ -49,9 +54,12 @@ const Location = () => {
                                     <h4 className="text-white font-bold mb-1">Our Location</h4>
                                     <p className="text-gray-400 text-sm">Siddartha Cinemas, Marpuri street Rd, Madanapalle</p>
                                 </div>
-                            </div>
+                            </a>
 
-                            <div className="flex items-start gap-4 p-6 rounded-xl bg-surface/50 border border-white/5 hover:border-primary/20 transition-colors group">
+                            <a
+                                href="tel:+919440272557"
+                                className="flex items-start gap-4 p-6 rounded-xl bg-surface/50 border border-white/5 hover:border-primary/20 transition-colors group cursor-pointer"
+                            >
                                 <div className="p-3 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-black transition-all">
                                     <Phone className="w-6 h-6" />
                                 </div>
@@ -59,9 +67,9 @@ const Location = () => {
                                     <h4 className="text-white font-bold mb-1">Contact Us</h4>
                                     <p className="text-gray-400 text-sm">+91 94402 72557</p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                        <a href="https://maps.app.goo.gl/kzN7h4duE3w9PCRF9" target="_blank" rel="noopener noreferrer" className="inline-block w-full text-center py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-primary hover:text-black hover:border-primary transition-all duration-300">
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Siddartha+Cinemas+4K+Dolby,Society+Colony+Main+Rd,Marpuri+Street,Madanapalle,Andhra+Pradesh+517325" target="_blank" rel="noopener noreferrer" className="inline-block w-full text-center py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-primary hover:text-black hover:border-primary transition-all duration-300">
                             Get Directions
                         </a>
                     </div>
