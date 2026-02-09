@@ -218,8 +218,8 @@ function App() {
           </div>
 
           {/* Brand Partners */}
-          <div className="mt-16 animate-fade-in-up delay-400 w-full max-w-screen-xl mx-auto px-4">
-            <div className="flex flex-nowrap justify-between items-center gap-3 md:gap-4 bg-white border-2 border-white rounded-2xl p-[7px] shadow-2xl overflow-x-auto no-scrollbar">
+          <div className="mt-8 animate-fade-in-up delay-400 w-full max-w-screen-xl mx-auto px-4">
+            <div className="flex flex-nowrap justify-between items-center gap-3 md:gap-4 bg-white border-2 border-white rounded-2xl p-[5px] shadow-2xl overflow-x-auto no-scrollbar">
               <img src={BMS} alt="BookMyShow" className="h-6 md:h-10 w-auto object-contain shrink-0" />
               <img src={Laser4K} alt="4K Laser" className="h-6 md:h-10 w-auto object-contain shrink-0" />
               <img src={Dolby} alt="Dolby Atmos" className="h-8 md:h-12 w-auto object-contain shrink-0" />
