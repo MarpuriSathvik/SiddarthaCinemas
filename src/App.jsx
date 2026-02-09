@@ -220,9 +220,9 @@ function App() {
           {/* Brand Partners */}
           <div className="mt-8 animate-fade-in-up delay-400 w-full max-w-screen-xl mx-auto px-4">
             {/* Mobile: Auto-scrolling carousel */}
-            <div className="md:hidden overflow-hidden w-full">
-              <div className="flex w-max animate-scroll-logos">
-                {/* First set (Card 1) */}
+            <div className="md:hidden overflow-hidden">
+              <div className="flex animate-scroll-logos">
+                {/* First set with white background */}
                 <div className="shrink-0 pr-4">
                   <div className="flex items-center gap-4 bg-white rounded-2xl p-[5px] shadow-2xl">
                     <img src={Qube} alt="Qube Cinema" className="h-6 w-auto object-contain" />
@@ -235,7 +235,7 @@ function App() {
                     <img src={ThreeD} alt="3D" className="h-8 w-auto object-contain" />
                   </div>
                 </div>
-                {/* Duplicated set (Card 2) for seamless loop */}
+                {/* Duplicated set for seamless loop */}
                 <div className="shrink-0 pr-4">
                   <div className="flex items-center gap-4 bg-white rounded-2xl p-[5px] shadow-2xl">
                     <img src={Qube} alt="Qube Cinema" className="h-6 w-auto object-contain" />
