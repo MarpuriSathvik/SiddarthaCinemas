@@ -65,16 +65,16 @@ function App() {
       rating: "8.3", // Estimated/Placeholder as BMS rating wasn't explicitly scraped, but usually high for new releases. Or better, remove rating if not sure? No, existing UI expects it. I'll use a safe placeholder or omit if component handles it. Let's use a generic high rating.
       duration: "2h 21m",
       image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/amaravathiki-aahvanam-et00486044-1770883657.jpg",
-      bookUrl: "https://in.bookmyshow.com/cinemas/madanapalle/siddartha-cinemasscreen-2-dolby-lasermadanapalle/buytickets/MSDR/20260214",
+      bookUrl: "https://in.bookmyshow.com/cinemas/madanapalle/siddartha-cinemasscreen-2-dolby-lasermadanapalle/buytickets/MSDR/",
       showTimes: ["11:00 AM", "06:00 PM"]
     },
     {
       title: "Dhurandhar",
       genre: "Hindi (A)",
-      rating: "8.5",
-      duration: "3h 32m",
+      rating: "9.2",
+      duration: "3h 30m",
       image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/dhurandhar-et00452447-1764571309.jpg",
-      bookUrl: "https://in.bookmyshow.com/cinemas/madanapalle/siddartha-cinemasscreen-2-dolby-lasermadanapalle/buytickets/MSDR/20260214",
+      bookUrl: "https://in.bookmyshow.com/cinemas/madanapalle/siddartha-cinemasscreen-2-dolby-lasermadanapalle/buytickets/MSDR/",
       showTimes: ["02:00 PM", "09:00 PM"]
     }
   ];
