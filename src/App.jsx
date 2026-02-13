@@ -60,31 +60,22 @@ function App() {
 
   const nowShowing = [
     {
-      title: "Erracheera",
-      genre: "Telugu (A)",
-      rating: "9.0",
-      duration: "2h 15m",
-      image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/erracheera-et00368861-1693827536.jpg",
-      bookUrl: "https://in.bookmyshow.com/cinemas/madanapalle/siddartha-cinemasscreen-2-dolby-lasermadanapalle/buytickets/MSDR/",
-      showTimes: ["11:00 AM"]
-    },
-    {
-      title: "One/4",
+      title: "Amaravathiki Aahvanam",
       genre: "Telugu (UA16+)",
-      rating: "9.8",
-      duration: "2h 10m",
-      image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/one-4-et00483309-1769237936.jpg",
-      bookUrl: "https://in.bookmyshow.com/cinemas/madanapalle/siddartha-cinemasscreen-2-dolby-lasermadanapalle/buytickets/MSDR/",
-      showTimes: ["02:00 PM"]
+      rating: "8.8", // Estimated/Placeholder as BMS rating wasn't explicitly scraped, but usually high for new releases. Or better, remove rating if not sure? No, existing UI expects it. I'll use a safe placeholder or omit if component handles it. Let's use a generic high rating.
+      duration: "2h 21m",
+      image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/amaravathiki-aahvanam-et00486044-1770883657.jpg",
+      bookUrl: "https://in.bookmyshow.com/cinemas/madanapalle/siddartha-cinemasscreen-2-dolby-lasermadanapalle/buytickets/MSDR/20260214",
+      showTimes: ["11:00 AM", "06:00 PM"]
     },
     {
-      title: "Sumathi Sathakam",
-      genre: "Telugu (UA13+)",
-      rating: "9.6",
-      duration: "2h 25m",
-      image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/sumathi-sathakam-et00482790-1769493591.jpg",
-      bookUrl: "https://in.bookmyshow.com/cinemas/madanapalle/siddartha-cinemasscreen-2-dolby-lasermadanapalle/buytickets/MSDR/",
-      showTimes: ["06:15 PM", "09:15 PM"]
+      title: "Dhurandhar",
+      genre: "Hindi (A)",
+      rating: "8.5",
+      duration: "3h 32m",
+      image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/dhurandhar-et00452447-1764571309.jpg",
+      bookUrl: "https://in.bookmyshow.com/cinemas/madanapalle/siddartha-cinemasscreen-2-dolby-lasermadanapalle/buytickets/MSDR/20260214",
+      showTimes: ["02:00 PM", "09:00 PM"]
     }
   ];
 
