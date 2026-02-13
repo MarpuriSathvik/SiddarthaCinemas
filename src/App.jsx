@@ -62,7 +62,7 @@ function App() {
     {
       title: "Amaravathiki Aahvanam",
       genre: "Telugu (UA16+)",
-      rating: "8.8", // Estimated/Placeholder as BMS rating wasn't explicitly scraped, but usually high for new releases. Or better, remove rating if not sure? No, existing UI expects it. I'll use a safe placeholder or omit if component handles it. Let's use a generic high rating.
+      rating: "8.3", // Estimated/Placeholder as BMS rating wasn't explicitly scraped, but usually high for new releases. Or better, remove rating if not sure? No, existing UI expects it. I'll use a safe placeholder or omit if component handles it. Let's use a generic high rating.
       duration: "2h 21m",
       image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/amaravathiki-aahvanam-et00486044-1770883657.jpg",
       bookUrl: "https://in.bookmyshow.com/cinemas/madanapalle/siddartha-cinemasscreen-2-dolby-lasermadanapalle/buytickets/MSDR/20260214",
